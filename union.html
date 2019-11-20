@@ -61,14 +61,14 @@ var polygon2 = turf.polygon([
     "stroke-width": 5
 });
 
-var polygon = turf.union(polygon1, polygon2);
-
 var map = L.mapbox.map('map',  'mapbox.dark')
-    .setView([35.463453, -100.514914], 5)
-    .featureLayer.setGeoJSON(polygon);
+    .setView([35.463453, -100.514914], 5);
 
-    L.mapbox.featureLayer().setGeoJSON(polygon1).addTo(map);
-    L.mapbox.featureLayer().setGeoJSON(polygon2).addTo(map);
+L.mapbox.featureLayer().setGeoJSON(polygon1).addTo(map);
+L.mapbox.featureLayer().setGeoJSON(polygon2).addTo(map);
+
+var polygon = turf.union(polygon1, polygon2);
+L.mapbox.featureLayer().setGeoJSON(polygon).addTo(map);
 
 
 </script>
