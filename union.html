@@ -16,6 +16,7 @@
 <div id='map'></div>
 
 <script>
+
 L.mapbox.accessToken = 'pk.eyJ1IjoianZyb3Vzc2VhdSIsImEiOiJYYUNlcVRZIn0.lp0867Jn5ynlj72kMwICSA';
 
 var polygon1 = turf.polygon([
@@ -41,11 +42,7 @@ var polygon1 = turf.polygon([
         [-97.96508789062499, 33.87953701355924], [-97.767333984375, 33.897777013859475],
         [-97.646484375, 33.97980872872457], [-97.42675781249999, 33.82023008524739]
     ]
-], {
-    "fill": "#6BC65F",
-    "stroke": "#6BC65F",
-    "stroke-width": 5
-});
+]);
 
 var polygon2 = turf.polygon([
           [
@@ -55,13 +52,9 @@ var polygon2 = turf.polygon([
             [-108.2373046875, 31.765537409484374],[-108.28125, 31.39115752282472],
             [-109.09423828125, 31.372399104880525],[-109.05029296875, 37.00255267215955]
           ]
-        ], {
-    "fill": "#6BC65F",
-    "stroke": "#6BC65F",
-    "stroke-width": 5
-});
+        ]);
 
-var map = L.mapbox.map('map',  'mapbox.dark')
+var map = L.mapbox.map('map',  'mapbox.outdoors')
     .setView([35.463453, -100.514914], 5);
 
 L.mapbox.featureLayer().setGeoJSON(polygon1).addTo(map);
